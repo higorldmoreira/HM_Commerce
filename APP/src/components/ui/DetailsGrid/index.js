@@ -1,0 +1,1 @@
+export { DetailsGrid } from './DetailsGrid';

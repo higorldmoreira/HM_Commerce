@@ -1,0 +1,74 @@
+# ---------------------------------------------------------------
+# HM Commerce — Docker Compose
+# ---------------------------------------------------------------
+# Quick start:
+#   cp .env.example .env   # fill in real secrets
+#   docker compose up -d
+# ---------------------------------------------------------------
+
+services:
+
+  # ── MySQL 8 ──────────────────────────────────────────────────
+  commerce-db:
+    image: mysql:8
+    container_name: commerce-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE:      ${DB_NAME}
+      MYSQL_USER:          ${DB_USER}
+      MYSQL_PASSWORD:      ${DB_PASSWORD}
+    ports:
+      - "3307:3306"
+    volumes:
+      - commerce-db-data:/var/lib/mysql
+      # MySQL only processes files directly in initdb.d (no subdirectories)
+      # Files are executed in alphabetical order, so prefix with numbers
+      - ./API/Database/migrations/V1__create_schema.sql:/docker-entrypoint-initdb.d/01_V1__create_schema.sql:ro
+      - ./API/Database/migrations/V2__create_stored_procedures.sql:/docker-entrypoint-initdb.d/02_V2__create_stored_procedures.sql:ro
+      - ./API/Database/seeds/S1__admin_user.sql:/docker-entrypoint-initdb.d/03_S1__admin_user.sql:ro
+      - ./API/Database/seeds/S2__demo_data.sql:/docker-entrypoint-initdb.d/04_S2__demo_data.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  # ── .NET 9 API ───────────────────────────────────────────────
+  commerce-api:
+    build:
+      context: ./API
+      dockerfile: Dockerfile
+    container_name: commerce-api
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      ASPNETCORE_URLS:             "http://+:8080"
+      ASPNETCORE_ENVIRONMENT:      "Production"
+      # Overrides appsettings.json connection string
+      ConnectionStrings__Commerce: "Server=commerce-db;Port=3306;Database=${DB_NAME};User=${DB_USER};Password=${DB_PASSWORD};AllowPublicKeyRetrieval=True;SslMode=None"
+      # JWT hash code — maps to appsettings: HashCode
+      HashCode:                    ${HASH_CODE}
+      # Metabase embed secret — maps to appsettings: Metabase.EmbedSecret
+      Metabase__EmbedSecret:       ${METABASE_EMBED_SECRET}
+    ports:
+      - "8082:8080"
+    depends_on:
+      commerce-db:
+        condition: service_healthy
+
+  # ── React / Vite (nginx) ─────────────────────────────────────
+  commerce-app:
+    build:
+      context: ./APP
+      dockerfile: Dockerfile
+    container_name: commerce-app
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    depends_on:
+      - commerce-api
+
+volumes:
+  commerce-db-data:

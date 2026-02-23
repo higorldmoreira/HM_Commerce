@@ -1,0 +1,951 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Domain</name>
+    </assembly>
+    <members>
+        <member name="P:Domain.Models.Entity.Entity.Id">
+            <summary>ID da entidade RX Sem Digito</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.EntityId">
+            <summary>ID da entidade RX com digito</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.RelationalBranchId">
+            <summary>Código relacional da Filial - OBS: Obrigatoria a gravação dessa entidade, pelo seu respectivo método, antes do envio da Nota </summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.RelatedEntityId">
+            <summary>Código relacional da entidade(Cliente/Fornecedor/Fabricante) do Sistema a integrar</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.CompanyName">
+            <summary>Razão Social da Entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.NickName">
+            <summary>Nome Fantasia da Entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.EntityType">
+            <summary>Código que define o tipo de entidade: 00 - Banco / 01 - Cliente / 02 - Fabricante / 03 - Funcionário / 04 - Hospital / 05 - Revendedor / 06 - Outro / 07 - Genérico / 08 - Distribuidor / 09 - Matriz / 11 - Supermercado / 13 - Transportadora / 14 - Filial / 15 - Escola / 16 - Convenio / 17 - Consumidor </summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.EntitySubType">
+            <summary>Código que define o tipo de entidade: EX: Farmacia, Academia, …..</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.EntitySituation">
+            <summary>Código definindo a situação da entidade: 0 - Ativo / 1 - Bloqueado / 2 - Inativo</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.EntitySituationDescription">
+            <summary>Descrição definindo a situação da entidade: 0 - Ativo / 1 - Bloqueado / 2 - Inativo</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.KindPerson">
+            <summary>Código definindo o tipo de pessoa: 0 - Física / 1 - Jurídica</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.RelationalMatrixId">
+            <summary>Código que relaciona a entidade a uma outra entidade para agrupar matriz e filiais. OBS: Esse código é o código do Sistema integrador</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.Flag">
+            <summary>Descrição da bandeira da entidade. Ex: Drogasmil, Rede Mais...</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.TypeLevyId">
+            <summary>Código com o tipo de cobrança padrão dessa entidade: 00 - Banco / 10 - Cheque / 11 - Dinheiro / 12 - Futura </summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.CreditLimit">
+            <summary>Limite de crédito para compra da entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.EntityNote">
+            <summary>Obs da entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.BirthDate">
+            <summary>DataReturn de nascimento. (YYYY-MM-DD).</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.Email">
+            <summary>E-mail da entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.RegistrationDate">
+            <summary>DataReturn de cadastro no sistema. (YYYY-MM-DD hh:mm:ss).</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.EntityTaxationName">
+            <summary>Descrição Tributária para o grupo de Entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.TypeImportBranch">
+            <summary>Tipo de importação da Filial onde: 1- Código relacional do Sistema Integrador / 2 - Código da entidade, no Sistema Delage com dígito / 3 - Código da entidade, no Sistema Delage sem dígito / 4 - EAN da entidade / 5 - CNPJ da entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.TypeImportEntity">
+            <summary>Tipo de importação da Entidade onde: 1- Código relacional do Sistema Integrador / 2 - Código da entidade, no Sistema Delage com dígito / 3 - Código da entidade, no Sistema Delage sem dígito / 4 - EAN da entidade / 5 - CNPJ da entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.TypeImportMatrix">
+            <summary>Tipo de importação da Matrix da Entidade onde: 1- Código relacional do Sistema Integrador / 2 - Código da entidade, no Sistema Delage com dígito / 3 - Código da entidade, no Sistema Delage sem dígito / 4 - EAN da entidade / 5 - CNPJ da entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.SectorId">
+            <summary>Código do Setor da Entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.Sector">
+            <summary>Descrição do setor.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.PoleId">
+            <summary>Código do Polo.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.Pole">
+            <summary>Descrição do Polo.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.Rote">
+            <summary>Código da Rota.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.RoteDescription">
+            <summary>Descrição da Rota.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.MaximumSectorDelay">
+            <summary>Atraso Máximo.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.PendencyId">
+            <summary>Código da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.Pendency">
+            <summary>Descrição da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.EntityDocuments">
+            <summary>Lista de documentos da entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.EntityAddresses">
+            <summary>Lista de endereços da entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.EntityPhones">
+            <summary>Lista de telefones da entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.Entity.EntityAttributes">
+            <summary>Lista de atributos da entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAddress.Id">
+            <summary>ID da entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAddress.Street">
+            <summary>Endereço da entidade: Rua, avenida, ….</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAddress.AddressType">
+            <summary>Tipo do Endereço(Comercial, Residencial, Cobrança, …).</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAddress.Number">
+            <summary>Número da residencia. Caso não exista colocar S/N.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAddress.Complement">
+            <summary>Complemento: Apartamento, bloco, ….</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAddress.District">
+            <summary>Bairro da entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAddress.ZipCode">
+            <summary>Cep da entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAddress.City">
+            <summary>Cidade da entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAddress.State">
+            <summary>UF da entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAddress.PrimaryAdress">
+            <summary>Endereço principal(0 = Não, 1 = Sim). So pode haver 1 principal.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAddress.RouteId">
+            <summary>Código da Rota.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAddress.Route">
+            <summary>Descrição da Rota.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAddress.TypeImportEntity">
+            <summary>Tipo de importação da Entidade onde: 1- Código relacional do Sistema Integrador / 2 - Código da entidade, no Sistema Delage com dígito / 3 - Código da entidade, no Sistema Delage sem dígito / 4 - EAN da entidade / 5 - CNPJ da entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAddress.AddressIdentifier">
+            <summary>Identificador de endereço.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAddress.PendencyId">
+            <summary>Código da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAddress.Pendency">
+            <summary>Descrição da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAttribute.Id">
+            <summary>ID da entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAttribute.Attribute">
+            <summary>Nome do atributo da entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAttribute.AttributeOptionId">
+            <summary>Código da Opção do atributo da entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAttribute.AttributeOption">
+            <summary>Opção do atributo da entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAttribute.TypeImportEntity">
+            <summary>Tipo de importação da Entidade onde: 1- Código relacional do Sistema Integrador / 2 - Código da entidade, no Sistema Delage com dígito / 3 - Código da entidade, no Sistema Delage sem dígito / 4 - EAN da entidade / 5 - CNPJ da entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAttribute.PendencyId">
+            <summary>Código da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityAttribute.Pendency">
+            <summary>Descrição da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityDocument.Id">
+            <summary>ID da entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityDocument.DocumentNumber">
+            <summary>Número do documento da entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityDocument.DocumentType">
+            <summary>Tipo do document(EX: CNPJ, CNH, CPF, Inscrição Estadual, …) da entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityDocument.Emitter">
+            <summary>Emissor do documento da entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityDocument.IssueDate">
+            <summary>DataReturn de Emissão. (YYYY-MM-DD) do documento da entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityDocument.ExpirationDate">
+            <summary>DataReturn de cadastro vencimento. (YYYY-MM-DD) – Obrigatório para documentos que utilziam DataReturn de vencimento da entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityDocument.PendencyId">
+            <summary>Código da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityDocument.Pendency">
+            <summary>Descrição da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityPhone.Id">
+            <summary>ID da entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityPhone.TelephoneNumber">
+            <summary>Número do telephone da entidade. Enviar formatado - 99654-3665</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityPhone.TelephoneType">
+            <summary>Tipo do telefone(EX: Comercial, fax, cellular, …) da entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityPhone.PrimaryPhone">
+            <summary>Telefone principal(0 = Não, 1 = Sim). So pode haver 1 principal da entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityPhone.AreaCode">
+            <summary>Código de área da entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityPhone.ExtensionLine">
+            <summary>Ramal da entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityPhone.TypeImportEntity">
+            <summary>Tipo de importação da Entidade onde: 1- Código relacional do Sistema Integrador / 2 - Código da entidade, no Sistema Delage com dígito / 3 - Código da entidade, no Sistema Delage sem dígito / 4 - EAN da entidade / 5 - CNPJ da entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityPhone.PendencyId">
+            <summary>Código da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Entity.EntityPhone.Pendency">
+            <summary>Descrição da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.Id">
+            <summary>ID do titulo no RX</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.RelationalBranchId">
+            <summary>Código relacional da Filial - OBS: Obrigatoria a gravação dessa entidade, pelo seu respectivo método, antes do envio da Nota </summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.InvoiceNumber">
+            <summary>Número do titulo</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.InvoiceSeries">
+            <summary>Série do titulo</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.AcessKey">
+            <summary>Chave de acesso do titulo</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.RelatedEntityId">
+            <summary>Código relacional da entidade(Cliente/Fornecedor/Fabricante) do Sistema a integrar</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.EntityName">
+            <summary>Nome da Entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.EntityDoc">
+            <summary>Documento da Entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.InvoicePrice">
+            <summary>Valor do titulo</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.IssueDate">
+            <summary>DataReturn e hora que a NF foi emitida. (YYYY-MM-DD hh:mm:ss)</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.RegistrationDate">
+            <summary>DataReturn e hora que a NF foi cadatrada. (YYYY-MM-DD hh:mm:ss)</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.InvoiceTypeOperation">
+            <summary>Tipo da Operação da NF 0 - Saida / 1 - Entrada</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.SalesOrderId">
+            <summary>Código do pedido de venda(Obrigatório para notas de saida)</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.InvoiceOperation">
+             <summary>Podendo expander a qtd de operações 
+            operacao - descricao         -          TipoOperacao: 
+                0	    venda                       SAIDA       /
+                1	    remessa                     SAIDA       /
+                2	    simbolico                   SAIDA       /
+                3	    transferencia               SAIDA       /
+                4	    estorno                     SAIDA       /
+                5	    Devolucao de compras        SAIDA       /
+                6	    Estorno de balanco          SAIDA       /
+                7	    compra                      ENTRADA     / 
+                8	    devolucao parcial           ENTRADA     /
+                9	    acerto                      ENTRADA     /
+                10	    Acerto de balanco           ENTRADA     /
+                11	    Devolucao                   ENTRADA     /
+                12	    devolucao com nota          ENTRADA     /
+                13	    entrada transferencia       ENTRADA     /
+                14	    bonificacao                 SAIDA       /
+                15	    Entrada Bonificação         ENTRADA     /
+                16	    Cupom Fiscal                SAIDA       /
+                17	    consignacao                 SAIDA       /
+                18	    venda por consignacao       SAIDA       /
+                19	    devolucao por consignacao   ENTRADA     /
+                20	    Venda Exportação            SAIDA       /
+                21	    Devolução Exportação        ENTRADA     /
+            </summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.SaleType">
+             <summary>Tipos de venda:
+            código  --  descricao
+            0	 --     CPD
+            1	 --     Televendas
+            2	 --     BBS
+            3	 --     Vendedor
+            4	 --     Balcao
+            5	 --     Internet
+            6	 --     TV - Varejo
+            7	 --     Checkout
+            8	 --     Operador Logistico
+            9	 --     EDI
+            10	 --     BBS - CD
+            11	 --     Cotacao
+            </summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.InvoiceType">
+             <summary>Tipos de titulos:
+            titulo -- definicao
+            0	 --   NF BA
+            1	 --   NF CA
+            2	 --   NF TC
+            3	 --   Credito
+            4	 --   Debito
+            5	 --   Cheque S/F
+            6	 --   Acerto
+            7	 --   Cupom fiscal
+            8	 --   ENTRADA PARA BENEFICIAMENTO
+            9	 --   SAIDA PARA BENEFICIAMENTO
+            10	 --   Tiv.Avulso
+            11	 --   Tiv.Divergência
+            </summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.RelationalSalesmanId">
+            <summary>Código relacional do Vendedor no Sistema a integrar</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.RelationalInvoiceOperationId">
+            <summary>Código relacional da Operação no Sistema a integrar</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.TypeImportBranch">
+            <summary>Tipo de importação da Filial onde: 1- Código relacional do Sistema Integrador / 2 - Código da entidade, no Sistema Delage com dígito / 3 - Código da entidade, no Sistema Delage sem dígito / 4 - EAN da entidade / 5 - CNPJ da entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.TypeImportEntity">
+            <summary>Tipo de importação da Entidade onde: 1- Código relacional do Sistema Integrador / 2 - Código da entidade, no Sistema Delage com dígito / 3 - Código da entidade, no Sistema Delage sem dígito / 4 - EAN da entidade / 5 - CNPJ da entidade.</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.WebService">
+            <summary>Não utilizado na integração, utilizado internamente.</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.PendencyId">
+            <summary>Código da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.Pendency">
+            <summary>Descrição da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.InvoiceItens">
+            <summary>Lista de itens da NF.</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.Entity">
+            <summary>Não utilizado na integração, utilizado internamente.</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.Invoice.InvoiceInstallments">
+            <summary>Lista de parcelas da NF.</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceInstallment.InvoiceNumber">
+            <summary>ID do titulo no RX</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceInstallment.Installment">
+            <summary>Número da parcela do titulo</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceInstallment.InstallmentValue">
+            <summary>Valor da parcela do titulo</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceInstallment.DueDate">
+            <summary>Vencimento da parcela do titulo (YYYY-MM-DD hh:mm:ss)</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceInstallment.PendencyId">
+            <summary>Código da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceInstallment.Pendency">
+            <summary>Descrição da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItem.Id">
+            <summary>ID do titulo no RX</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItem.RelatedProductId">
+            <summary>Código do produto relacional, contido no sistema do Integrador</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItem.ProductId">
+            <summary>Código do produto no RX, sem digito</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItem.ProductCode">
+            <summary>Código do produto no RX, com digito</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItem.BarCode">
+            <summary>Código de barras do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItem.Quantity">
+            <summary>Quantidade do item relacionado a NF</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItem.Weight">
+            <summary>Peso total do item relacionado a NF</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItem.Price">
+            <summary>Preço Unitário do Item na NF</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItem.ItemNumber">
+            <summary>Número do item na NF</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItem.PurchaseOrderNumber">
+            <summary>Número do pedido de compra</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItem.TypeImportProduct">
+            <summary>Tipo de importação do Produto onde: 1- Código relacional do Sistema Integrador / 2 - Código do Produto, no Sistema Delage com dígito / 3 - Código do Produto, no Sistema Delage sem dígito / 4 - EAN do Produto.</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItem.InvoiceItemCost">
+            <summary>Lista de preço de custo do item da NF</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItem.InvoiceItemLots">
+            <summary>Lista de Lotes do Item da NF</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItem.PendencyId">
+            <summary>Código da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItem.Pendency">
+            <summary>Descrição da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItem.product">
+            <summary>Não utilizado na integração, utilizado internamente.</summary>
+        </member>
+        <member name="T:Domain.Models.Invoice.InvoiceItemLot">
+            <summary>Classse dos lotes contidos no item da NFy</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItemLot.Id">
+            <summary>ID do titulo no RX</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItemLot.Lot">
+            <summary>Número do lote, teferente ao item relacionado a NF</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItemLot.FabricationDate">
+            <summary>DataReturn de Fabricação. (YYYY-MM-DD)</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItemLot.ExpirationDate">
+            <summary>DataReturn de Validade. (YYYY-MM-DD)</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItemLot.Quantity">
+            <summary>Quantidade do item relacionado a NF</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItemLot.Price">
+            <summary>Preço Unitário do Item na NF</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItemLot.Weight">
+            <summary>Peso total do item relacionado a NF</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItemLot.PendencyId">
+            <summary>Código da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Invoice.InvoiceItemLot.Pendency">
+            <summary>Descrição da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="T:Domain.Models.Order.Order">
+            <summary>Classe Pedido</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.OrderNumber">
+            <summary>Número do pedido</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.ClientDocument">
+            <summary>Documento da entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.RelationalBillingBranchId">
+            <summary>Código da filial faturamento relacionada ao integrador</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.ClientName">
+            <summary>Nome da Entidade</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.RelationalClientId">
+            <summary>Código da Entidade Relacionada ao integrador</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.OutoGoing">
+            <summary>ID do Tipo de saida</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.Operation">
+            <summary>código da Operação do pedido</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.Situation">
+            <summary>Situação do pedido</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.TypingDate">
+            <summary>DataReturn de Digitação do pedido</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.Volumes">
+            <summary>Quantidade total de volumes no pedido</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.Weight">
+            <summary>Peso total do pedido</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.WhoTyping">
+            <summary>Digitador do pedido</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.SaleType">
+            <summary>Código do tipo da venda</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.CondtionCod">
+            <summary>Código da Condição</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.RelationalOrderId">
+            <summary>Código do pedido relacional</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.ObsNf">
+            <summary>Observação a ser acrescentada na Nota Fiscal</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.TotalValue">
+            <summary>Valor Total do pedido</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.ObsDelivery">
+            <summary>Observação de entrega do pedido</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.StockBranchId">
+            <summary>Código da Filial Estoque, no sistema RX, sem o digito verificador</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.DeadlineId">
+            <summary>ID do prazo de pagamento</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.RelationalInvoiceOperationId">
+            <summary>Código da Operação do pedido relacionada ao integrador</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.OrderItems">
+            <summary>Lista de itens do pedido</summary>
+        </member>
+        <member name="P:Domain.Models.Order.Order.OrderInstallments">
+            <summary>LIsta das parcelas do pedido</summary>
+        </member>
+        <member name="T:Domain.Models.Order.OrderInstallment">
+            <summary>Classe de parcelas do pedido</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderInstallment.OrderNumber">
+            <summary>Número do pedido</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderInstallment.Installment">
+            <summary>Parcela do pedido</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderInstallment.InstallmentValue">
+            <summary>Valor da parcela do pedido</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderInstallment.Deadline">
+            <summary>ID do prazo da parcela</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderInstallment.DueDate">
+            <summary>Vencimento da parcela</summary>
+        </member>
+        <member name="T:Domain.Models.Order.OrderItem">
+            <summary>Classe de Itens do pedido</summary>
+        </member>
+        <member name="M:Domain.Models.Order.OrderItem.#ctor">
+            <summary>Classe de Itens do pedido</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.OrderNumber">
+            <summary>Número do pedido</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.RelatedProductId">
+            <summary>Código do produto relacionado ao Integrador</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.Quantity">
+            <summary>Quantidade solicitada do do item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.Price">
+            <summary>Preço do item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.Pdu">
+            <summary>Percentual de desconto do item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.Qb">
+            <summary>Quantidade Bonificada do item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.Pdf">
+            <summary>Percentual de desconto financeiro do item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.Ldf">
+            <summary>Limite de desconto financeiro do item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.Separeted">
+            <summary>Quantidade Separada do do item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.Reason">
+            <summary>código Motivo de corte do item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.DescriptionDif">
+            <summary>N/A</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.QuantityDif">
+            <summary>N/A</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.Unity">
+            <summary>N/A</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.Pqb">
+            <summary>N/A</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.PriceDif">
+            <summary>N/A</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.QuantityWeight">
+            <summary>Peso soliictado do item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.SeparetedWeight">
+            <summary>Peso separado do item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.Invoice">
+            <summary>N/A</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.ConferenceDate">
+            <summary>DataReturn da conferencia do item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.ConditionId">
+            <summary>ID da condição comercail do item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.SubsidizedDiscount">
+            <summary>N/A</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.InvoiceValue">
+            <summary>Valor NF do Item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.MerchandiseValue">
+            <summary>Valor Mercadoria do Item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.CostValue">
+            <summary>Valor de custo do Item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.CmvValue">
+            <summary>Valor CMV do Item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.ItemNumber">
+            <summary>Nº do item do Item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.PduMoney">
+            <summary>Valor da verba</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.HealthInsuranceId">
+            <summary>N/A</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.RelationalStockBranchId">
+            <summary>Código da Filial Estoque, no sistema RX, sem o digito verificador</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.LineId">
+            <summary>N/A</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.Note">
+            <summary>Observação do item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.MinValidity">
+            <summary>N/A</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.InicialSepareted">
+            <summary>N/A</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.ValuePdf">
+            <summary>N/A</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.ProductAuxiliarId">
+            <summary>N/A</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.CommissionPercentage">
+            <summary>Porcentagem de comissao</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.CommissionValue">
+            <summary>Valor de comissao</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.CommissionBase">
+            <summary>Base de comissao</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItem.OrderItemVolumeLots">
+            <summary>Lista de lotes para o item do pedido</summary>
+        </member>
+        <member name="T:Domain.Models.Order.OrderItemVolumeLot">
+            <summary>Classe de volume dos itens do pedido</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItemVolumeLot.OrderNumber">
+            <summary>Número do pedido</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItemVolumeLot.RelatedProductId">
+            <summary>Código do produto relacionado ao Integrador</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItemVolumeLot.Volume">
+            <summary>Nº do volume</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItemVolumeLot.LotId">
+            <summary>ID do lote do item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItemVolumeLot.Lot">
+            <summary>LOte do item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItemVolumeLot.ExpirationDate">
+            <summary>DataReturn de vencimento do lote</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItemVolumeLot.Quantity">
+            <summary>Quantidade do item</summary>
+        </member>
+        <member name="P:Domain.Models.Order.OrderItemVolumeLot.QuantityWeight">
+            <summary>Peso do Item</summary>
+        </member>
+        <member name="T:Domain.Models.Product.Product">
+            <summary>Classe de Produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.Id">
+            <summary>N/A</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.ProductId">
+            <summary>Código do produto sem o digito verificador</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.RelatedProductId">
+            <summary>Código do produto relacionado ao Integrador</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.ProductName">
+            <summary>Nome do Produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.Generic">
+            <summary>N/A</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.ProductSituation">
+            <summary>Código da situação do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.RelatedManufacturerId">
+            <summary>Código do fabricante, relacionado ao integrador(Para esse, deve-se ter enviado o fabrincante na gravação de entidade)</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.RegistrationPrice">
+            <summary>Preço de cadastro do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.Group">
+            <summary>Grupo do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.SubGroup">
+            <summary>SubGrupo do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.Seasonal">
+            <summary>é produto sazonal?</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.SalePackaging">
+            <summary>Embalagem de venda do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.PurchasePackaging">
+            <summary>Embalagem de compra do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.BillingPackaging">
+            <summary>Embalagem do fornecedor do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.Unity">
+            <summary>Unidade de medida do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.LotControl">
+            <summary>Produto tem controle de lote?</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.StockControlType">
+            <summary>Produto tem controle de estoque?</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.ValidityDays">
+            <summary>Dias de validade do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.Height">
+            <summary>Altura do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.Width">
+            <summary>Largura do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.Length">
+            <summary>Compimento do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.Weight">
+            <summary>Peso do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.PackingWeight">
+            <summary>Peso da caixa do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.Medicine">
+            <summary>Produto é medicamento?</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.RegistrationDate">
+            <summary>DataReturn de cadastro do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.Controlled">
+            <summary>é produto controlado?</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.ProductType">
+            <summary>Tipo do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.TypeImportProduct">
+            <summary>Tipo de importação do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.TypeImportEntity">
+            <summary>Tipo de importação da entidade do produto(Fabricante)</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.TypeImportBranch">
+            <summary>Tipo importação da Filial</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.ProductTaxationName">
+            <summary>Código tributário do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.TaxClassification">
+            <summary>Classificação Fiscal do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.StorageBranchId">
+            <summary>Código da Filial Estoque, no sistema RX, sem o digito verificador</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.VariableWeight">
+            <summary>Produto trabalha com peso varável?</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.Tolerance">
+            <summary>Caso tenha peso variável, qual a sua tolerancia?</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.RelationalLogisticsBranchId">
+            <summary>Código da Filial Estoque, no sistema RX, com o digito verificador</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.ProductCodeSupplier">
+            <summary>Código do produto no Fornecedor.</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.HealthMinistryCode">
+            <summary>Código do Ministério da Saúde(ANVISA).</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.CestCode">
+            <summary>Código Cest</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.PendencyId">
+            <summary>Código da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.Pendency">
+            <summary>Descrição da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.ProductAttributes">
+            <summary>Lista de atributos do produto.</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.ProductCostPrices">
+            <summary>Lista de Preço de custo do produto.</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.ProductSellingPrices">
+            <summary>Lista de Preço de venda do produto.</summary>
+        </member>
+        <member name="P:Domain.Models.Product.Product.ProductPackagings">
+            <summary>Lista de Códigos de barra do produto.</summary>
+        </member>
+        <member name="T:Domain.Models.Product.ProductAttribute">
+            <summary>Classe do atributo de Produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductAttribute.Id">
+            <summary>Código do produto sem o digito verificador</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductAttribute.Attribute">
+            <summary>Descrição do atributo do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductAttribute.AttributeOptionId">
+            <summary>ID do código de opção do atributo</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductAttribute.AttributeOption">
+            <summary>Descrição da opção do atributo do produtor</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductAttribute.PendencyId">
+            <summary>Código da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductAttribute.Pendency">
+            <summary>Descrição da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="T:Domain.Models.Product.ProductCostPrice">
+            <summary>Classe do Preço de custo do Produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductCostPrice.Id">
+            <summary>Código do produto sem o digito verificador</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductCostPrice.RelationalBranchId">
+            <summary>Código da Filial Estoque, relacionalda ao integrador</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductCostPrice.PriceList">
+            <summary>Descrição da lista de preço</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductCostPrice.CostPrice">
+            <summary>Preço de custo</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductCostPrice.AvgCostPrice">
+            <summary>Preço de custo médio</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductCostPrice.PendencyId">
+            <summary>Código da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductCostPrice.Pendency">
+            <summary>Descrição da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="T:Domain.Models.Product.ProductPackaging">
+            <summary>Classe de códogos de barra do Produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductPackaging.Id">
+            <summary>Código do produto sem o digito verificador</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductPackaging.BarCode">
+            <summary>Código de barras do produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductPackaging.Quantity">
+            <summary>Quantidade</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductPackaging.Height">
+            <summary>Altura</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductPackaging.Width">
+            <summary>Largura</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductPackaging.Length">
+            <summary>Comprimento</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductPackaging.Weight">
+            <summary>Peso</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductPackaging.PackingWeight">
+            <summary>Peso da caixa</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductPackaging.PrimaryBarCode">
+            <summary>é o Código de barras principal?</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductPackaging.Unity">
+            <summary>Unidade de medida</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductPackaging.PendencyId">
+            <summary>Código da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductPackaging.Pendency">
+            <summary>Descrição da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="T:Domain.Models.Product.ProductSellingPrice">
+            <summary>Classe de Preço de vanda do Produto</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductSellingPrice.Id">
+            <summary>Código do produto sem o digito verificador</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductSellingPrice.PriceList">
+            <summary>Descrição da lista de preço</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductSellingPrice.Price">
+            <summary>Preço de venda</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductSellingPrice.AvgPrice">
+            <summary>N/A</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductSellingPrice.ExpectedDate">
+            <summary>DataReturn de atualização</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductSellingPrice.Automatic">
+            <summary>Atualização automática?</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductSellingPrice.PendencyId">
+            <summary>Código da pendencia(retorno dado após a importação).</summary>
+        </member>
+        <member name="P:Domain.Models.Product.ProductSellingPrice.Pendency">
+            <summary>Descrição da pendencia(retorno dado após a importação).</summary>
+        </member>
+    </members>
+</doc>

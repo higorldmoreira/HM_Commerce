@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teste de Configuração - API</title>
+</head>
+<body>
+    <h1>Teste de Configuração da API</h1>
+    <div id="result"></div>
+    
+    <script>
+        async function testConfig() {
+            try {
+                // Testar carregamento do config.json
+                const configResponse = await fetch('/config.json');
+                const config = await configResponse.json();
+                
+                document.getElementById('result').innerHTML = `
+                    <h2>✅ Configuração Carregada:</h2>
+                    <p><strong>URL_BASE_API:</strong> ${config.URL_BASE_API}</p>
+                    <p><strong>Origem Frontend:</strong> ${window.location.origin}</p>
+                    
+                    <h2>🔍 Teste de CORS:</h2>
+                    <p>Fazendo requisição OPTIONS para testar CORS...</p>
+                `;
+                
+                // Testar CORS com OPTIONS
+                try {
+                    const corsTest = await fetch(`${config.URL_BASE_API}/Login`, {
+                        method: 'OPTIONS',
+                        headers: {
+                            'Access-Control-Request-Method': 'POST',
+                            'Access-Control-Request-Headers': 'Content-Type'
+                        }
+                    });
+                    
+                    document.getElementById('result').innerHTML += `
+                        <p><strong>OPTIONS Response:</strong> ${corsTest.status} ${corsTest.statusText}</p>
+                        <p><strong>Access-Control-Allow-Origin:</strong> ${corsTest.headers.get('Access-Control-Allow-Origin') || 'Não encontrado'}</p>
+                        <p><strong>Access-Control-Allow-Credentials:</strong> ${corsTest.headers.get('Access-Control-Allow-Credentials') || 'Não encontrado'}</p>
+                    `;
+                } catch (corsError) {
+                    document.getElementById('result').innerHTML += `
+                        <p><strong>❌ Erro CORS:</strong> ${corsError.message}</p>
+                    `;
+                }
+                
+            } catch (error) {
+                document.getElementById('result').innerHTML = `
+                    <h2>❌ Erro:</h2>
+                    <p>${error.message}</p>
+                `;
+            }
+        }
+        
+        testConfig();
+    </script>
+</body>
+</html>

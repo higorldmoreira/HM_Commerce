@@ -1,0 +1,81 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<LangVersion>9.0</LangVersion>
+		<TargetFramework>net9.0</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DocumentationFile>obj\Debug\netcoreapp3.1\Domain.xml</DocumentationFile>
+		<GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<DocumentationFile>bin\Release\net9.0\Domain.xml</DocumentationFile>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<Compile Remove="Connected Services\**" />
+		<Compile Remove="Models\PagueMenos\**" />
+		<Compile Remove="Scripts\01 - Tabelas\**" />
+		<Compile Remove="Scripts\Commercial\04 - Triggers\**" />
+		<EmbeddedResource Remove="Connected Services\**" />
+		<EmbeddedResource Remove="Models\PagueMenos\**" />
+		<EmbeddedResource Remove="Scripts\01 - Tabelas\**" />
+		<EmbeddedResource Remove="Scripts\Commercial\04 - Triggers\**" />
+		<None Remove="Connected Services\**" />
+		<None Remove="Models\PagueMenos\**" />
+		<None Remove="Scripts\01 - Tabelas\**" />
+		<None Remove="Scripts\Commercial\04 - Triggers\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+		<PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.2">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
+		<PackageReference Include="RestSharp" Version="112.0.0" />
+		<PackageReference Include="Roslynator" Version="0.2.10" />
+		<PackageReference Include="Roslynator.Analyzers" Version="4.13.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Roslynator.CodeAnalysis.Analyzers" Version="4.13.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Roslynator.Formatting.Analyzers" Version="4.13.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.556">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="MySqlConnector" Version="2.3.7" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.5.2" />
+		<PackageReference Include="System.ServiceModel.Duplex" Version="4.4.*" />
+		<PackageReference Include="System.ServiceModel.Http" Version="4.4.*" />
+		<PackageReference Include="System.ServiceModel.NetTcp" Version="4.4.*" />
+		<PackageReference Include="System.ServiceModel.Security" Version="4.4.*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<WCFMetadata Include="Connected Services" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Scripts\Commercial\99 - Testes\" />
+	</ItemGroup>
+
+</Project>
