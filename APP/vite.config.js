@@ -26,7 +26,7 @@ export default defineConfig({
     proxy: {
       // Proxy para a API em desenvolvimento para evitar CORS
       '/api': {
-        target: 'http://186.193.151.211:5056',
+        target: process.env.VITE_API_URL || 'http://localhost:8080',
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, '/api')

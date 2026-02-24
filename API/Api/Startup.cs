@@ -93,16 +93,8 @@ namespace Api
                         .WithOrigins(
                             "http://localhost:50556",
                             "http://localhost:58557",
-                            "http://localhost:57533",
-                            "http://192.168.0.3:3000",
-                            "http://192.168.0.10:3000",
-                            "http://192.168.0.10:5056",
-                            "http://192.168.0.10:5057",
-                            "http://192.168.0.10:5057/",
-                            "http://186.193.151.211:30500",
-                            "http://186.193.151.211:5056",
-                            "http://186.193.151.211:5057",
-                            "http://stockfarmamatriz.fix.telemidia.net.br"
+                            "http://localhost:57533"
+                            // Adicione as origens do ambiente de produção via configuração ou variável de ambiente
                         )
                         .AllowAnyHeader()
                         .AllowAnyMethod()

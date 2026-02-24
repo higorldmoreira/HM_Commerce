@@ -33,7 +33,7 @@ export const fetchConfig = async () => {
     // Fallback configuration baseado no ambiente
     const isDev = window.location.hostname === 'localhost'
     const fallbackConfig = {
-      URL_BASE_API: isDev ? "/api" : "http://186.193.151.211:5057/api"
+      URL_BASE_API: "/api"
     }
     
     console.log('⚠️ Usando configuração de fallback:', fallbackConfig)

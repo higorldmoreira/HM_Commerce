@@ -4,16 +4,16 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
 # Restore dependencies (layer-cached until csproj files change)
-COPY ["MbaApi/Api.csproj",                                    "MbaApi/"]
+COPY ["Api/Api.csproj",                                       "Api/"]
 COPY ["Domain/Domain.csproj",                                 "Domain/"]
 COPY ["Commerce.Application/Commerce.Application.csproj",     "Commerce.Application/"]
 COPY ["Commerce.Infrastructure/Commerce.Infrastructure.csproj","Commerce.Infrastructure/"]
 
-RUN dotnet restore "MbaApi/Api.csproj" --verbosity quiet
+RUN dotnet restore "Api/Api.csproj" --verbosity quiet
 
 # Copy source and publish
 COPY . .
-RUN dotnet publish "MbaApi/Api.csproj" \
+RUN dotnet publish "Api/Api.csproj" \
     -c Release \
     -o /app/publish \
     --no-restore

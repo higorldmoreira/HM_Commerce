@@ -5,12 +5,12 @@ namespace Api.Options
         public const string SectionName = "Metabase";
         
         /// <summary>
-        /// URL base do Metabase (ex: http://192.168.0.10:3000) - Usado para comunicação interna da API
+        /// URL base do Metabase (ex: http://192.168.0.10:3000) - Usado para comunicaï¿½ï¿½o interna da API
         /// </summary>
-        public string SiteUrl { get; set; } = "http://192.168.0.10:3000";
+        public string SiteUrl { get; set; } = "";
         
         /// <summary>
-        /// URL externa do Metabase (ex: http://186.193.151.211:30500) - Usado para gerar URLs de embedding
+        /// URL externa do Metabase (ex: http://&lt;host&gt;:&lt;port&gt;) - Usado para gerar URLs de embedding
         /// </summary>
         public string SiteUrlExternal { get; set; }
         
@@ -20,28 +20,28 @@ namespace Api.Options
         public string Host => SiteUrl?.TrimEnd('/');
         
         /// <summary>
-        /// Host externo - Retorna SiteUrlExternal se configurado, caso contrário usa SiteUrl
+        /// Host externo - Retorna SiteUrlExternal se configurado, caso contrï¿½rio usa SiteUrl
         /// </summary>
         public string HostExternal => !string.IsNullOrEmpty(SiteUrlExternal) ? SiteUrlExternal.TrimEnd('/') : Host;
         
         /// <summary>
         /// Secret para assinatura de tokens JWT de embedding
         /// </summary>
-        public string EmbedSecret { get; set; } = "1392b08f27c85dc0a9855a4135cfcaf64f871fb47c3a3ece4648b1c88cabc31f";
+        public string EmbedSecret { get; set; } = "";
         
         /// <summary>
-        /// Tempo de expiração dos tokens de embedding em minutos
+        /// Tempo de expiraï¿½ï¿½o dos tokens de embedding em minutos
         /// </summary>
         public int EmbedExpMinutes { get; set; } = 10;
         
         /// <summary>
-        /// Email do administrador para autenticação na API
+        /// Email do administrador para autenticaï¿½ï¿½o na API
         /// </summary>
-        public string AdminEmail { get; set; } = "higor@mbasistemas.com";
+        public string AdminEmail { get; set; } = "";
         
         /// <summary>
-        /// Senha do administrador para autenticação na API
+        /// Senha do administrador para autenticaÃ§Ã£o na API
         /// </summary>
-        public string AdminPassword { get; set; } = "6plBuGKjzzqymp";
+        public string AdminPassword { get; set; } = "";
     }
 }

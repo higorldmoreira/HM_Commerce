@@ -58,7 +58,7 @@ O banco é inicializado automaticamente na primeira execução via `API/Database
 ### Back-end
 
 ```bash
-cd API/MbaApi
+cd API/Api
 dotnet restore Commerce.sln
 dotnet run --project Api.csproj
 # Swagger em: http://localhost:57533
@@ -107,7 +107,7 @@ Copie `.env.example` para `.env` e preencha antes de subir os contêineres.
 ```
 HM_Commerce/
 ├── API/
-│   ├── MbaApi/            ← ASP.NET Core (entrada)
+│   ├── Api/               ← ASP.NET Core (entrada)
 │   │   └── Commerce.sln
 │   ├── Domain/            ← Modelos, serviços de domínio
 │   ├── Commerce.Application/   ← Casos de uso
@@ -155,7 +155,7 @@ Documentação interativa: **Swagger UI** disponível na raiz (`/`) quando o amb
 
 ```bash
 # API
-cd API/MbaApi && dotnet test Commerce.sln
+cd API/Api && dotnet test Commerce.sln
 
 # Front-end
 cd APP && npm test
